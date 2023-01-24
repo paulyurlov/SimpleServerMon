@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 def get_data():
     tmp = {}
-    with open('data.json') as f:
+    with open('/data/data.json') as f:
         d = json.load(f)
         # {"CPU": "1.6%", "MEM": "541Mi 7.7Gi", "CPU_TEMP": 37, "GPU_TEMP":         GPU Current Temp            : 44 C}
         tmp['cpu_temp'] = float(d["CPU_TEMP"])
