@@ -1,12 +1,10 @@
 import json
-from flask import Flask, redirect, render_template
-import subprocess
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
 def get_data():
-    rc = subprocess.call("./data/mon.sh", shell=True)
     tmp = {}
     with open('/data/cpu_mem.json') as f:
         d = json.load(f)
