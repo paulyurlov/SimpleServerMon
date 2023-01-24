@@ -21,7 +21,7 @@ def get_data():
         d = json.load(f)
         tmp['cpu_temp'] = d["coretemp-isa-0000"]["Package id 0"]["temp1_input"]
         tmp['gpu_temp'] = d["nouveau-pci-0100"]["temp1"]['temp1_input']
-
+    print(tmp)
     return tmp
 
 
