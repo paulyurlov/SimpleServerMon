@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 def get_data():
-    rc = subprocess.call("/data/mon.sh")
+    rc = subprocess.call("./data/mon.sh", shell=True)
     tmp = {}
     with open('/data/cpu_mem.json') as f:
         d = json.load(f)
