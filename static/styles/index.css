@@ -1,0 +1,81 @@
+body {
+    padding-top: 150px;
+    text-align: center;
+}
+
+#wrapper {
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+#wrapper2 {
+    overflow: hidden;
+}
+
+#temp {
+    padding: 2rem 2rem;
+    display: inline-block;
+    border: 3px solid #333333;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    text-transform: uppercase;
+    letter-spacing: 0.3ch;
+    background: #ffffff;
+    position: relative;
+}
+
+#load {
+    padding: 2rem 2rem;
+    display: inline-block;
+    border: 3px solid #333333;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    text-transform: uppercase;
+    letter-spacing: 0.3ch;
+    background: #ffffff;
+    position: relative;
+}
+
+.circle_gpu {
+    width: 20%;
+    display: inline-block;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.circle_cpu {
+    width: 20%;
+    display: inline-block;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.circle_mem_load {
+    width: 20%;
+    display: inline-block;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.circle_cpu_load {
+    width: 20%;
+    display: inline-block;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.left_p {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 48%;
+    bottom: 0%;
+    left: 0;
+}
+
+.right_p {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 48%;
+    bottom: 0%;
+    left: 0;
+}

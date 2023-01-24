@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Main page</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,700" rel="stylesheet">
+
+    <!-- Custom stlylesheet -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/index.css') }}">
+
+</head>
+
+<body>
+    <script src="{{ url_for('static',filename='scripts/circularProgressBar.js') }}"></script>
+    <div id="wrapper">
+        <div id="temp">
+            <div class="circle_cpu" data-pie='{ 
+                "cut": 40,
+                "rotation": 160,
+                "lineargradient": ["#ff0000", "yellow"],
+                "unit": " °C",
+                "round": true,
+                "percent": {{data.cpu_temp}},
+                "colorCircle": "#e6e6e6",
+                "size": 160,
+                "textPosition": "1em",
+                "fontSize": "1.2rem"
+              }'>
+                <p class="left_p">CPU_temp</p>
+            </div>
+            <div class="circle_gpu" data-pie='{ 
+                "cut": 40,
+                "rotation": 160,
+                "lineargradient": ["#ff0000", "yellow"],
+                "unit": " °C",
+                "round": true,
+                "percent": {{data.gpu_temp}},
+                "colorCircle": "#e6e6e6",
+                "size": 160,
+                "textPosition": "1em",
+                "fontSize": "1.2rem"
+              }'>
+                <p class="right_p">GPU_temp</p>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper2">
+        <div id="load">
+            <div class="circle_cpu_load" data-pie='{ 
+            "cut": 40,
+            "rotation": 160,
+            "percent": {{data.cpu_load}},
+            "colorSlice": "#90ee90",
+            "colorCircle": "#e6e6e6",
+            "round": true,
+            "size": 160,
+            "textPosition": "1em",
+            "fontSize": "1.2rem"
+          }'>
+                <p class="left_p">CPU_load</p>
+            </div>
+            <div class="circle_mem_load" data-pie='{ 
+            "cut": 40,
+            "rotation": 160,
+            "percent": {{data.mem_load}},
+            "colorSlice": "#90ee90",
+            "colorCircle": "#e6e6e6",
+            "round": true,
+            "size": 160,
+            "textPosition": "1em",
+            "fontSize": "1.2rem"
+          }'>
+                <p class="right_p">MEM_load</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        const circle_cpu = new CircularProgressBar("circle_cpu");
+        circle_cpu.initial();
+        const circle_gpu = new CircularProgressBar("circle_gpu");
+        circle_gpu.initial();
+        const circle_cpu_load = new CircularProgressBar("circle_cpu_load");
+        circle_cpu_load.initial();
+        const circle_mem_load = new CircularProgressBar("circle_mem_load");
+        circle_mem_load.initial();
+    </script>
+
+
+</body>
+
+</html>
